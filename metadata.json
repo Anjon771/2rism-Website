@@ -1,0 +1,6 @@
+{
+  "name": "2rism",
+  "description": "Tourism and travel platform to discover engaging places, hotels, restaurants, and activities",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

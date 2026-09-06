@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Unicons Line Icons -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width:768px)"
+      href="/css/mobile.css"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/Imgs/icons/Vector.png" />
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Main Application Script -->
+    <script defer src="/JS/script.js"></script>
+
+    <!-- SEO Title & Meta -->
+    <title>2rism</title>
+    <meta
+      name="description"
+      content="Tourism and travel platform to discover engaging places, hotels, restaurants, and activities"
+    />
+    <meta property="og:title" content="2rism" />
+    <meta
+      property="og:description"
+      content="Tourism and travel platform to discover engaging places, hotels, restaurants, and activities"
+    />
+  </head>
+  <body>
+    <!-- Mobile Drawer Overlay Backdrop -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- ==========================================================================
+         HERO SHOWCASE SECTION
+         ========================================================================== -->
+    <main class="main" id="home">
+      <!-- Header Navigation -->
+      <header class="header">
+        <!-- Logo -->
+        <a href="#home" class="logo" id="headerLogo" aria-label="2rism Home">
+          <img src="/Imgs/Logo/logo.svg" alt="2rism" />
+        </a>
+
+        <!-- Desktop Navigation Bar -->
+        <nav class="navbar" id="mainNavbar">
+          <ul class="navlists">
+            <li class="navlist"><a href="#home">Home</a></li>
+            <li class="navlist"><a href="#destinations">Destinations</a></li>
+            <li class="navlist"><a href="#restaurants">Stays</a></li>
+            <li class="navlist"><a href="#tours">Tours</a></li>
+            <li class="navlist"><a href="#activities">Activities</a></li>
+            <li class="navlist"><a href="#About">About Us</a></li>
+            <li class="navlist"><a href="#footerContact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- User & Saved Trips Actions -->
+        <div class="user-profile">
+          <button class="saved-trips-btn" id="savedTripsBtn" title="View Wishlist">
+            <i class="uil uil-heart"></i>
+            <span>Saved</span>
+            <span class="saved-counter" id="savedCounter">0</span>
+          </button>
+
+          <a href="#restaurants" class="header-cta-btn" id="headerCtaBtn">
+            <i class="uil uil-compass"></i>
+            <span>Explore Stays</span>
+          </a>
+
+          <!-- Mobile Toggle Buttons -->
+          <div class="toggleOn" id="toggleOnBtn" aria-label="Open Navigation">
+            <i class="uil uil-bars"></i>
+          </div>
+          <div class="toggleClose" id="toggleCloseBtn" aria-label="Close Navigation">
+            <i class="uil uil-multiply"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Showcase Hero Content -->
+      <div class="showcase-content">
+        <div class="hero-tag">
+          <i class="uil uil-compass"></i> Curated for Wanderlust Travelers
+        </div>
+        <h1>Discover the Most Engaging Places in the World</h1>
+        <p class="showcase-lead">
+          Explore handpicked boutique stays, authentic cultural tours, and hidden
+          gem destinations tailored for modern curious explorers.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://earth.google.com/web/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="showcase-button"
+            id="discoverGlobeBtn"
+          >
+            <img src="/Imgs/icons/globe.png" alt="" /> Discover on 3D Globe
+          </a>
+          <button class="hero-secondary-btn" id="playReelBtn">
+            <i class="uil uil-play-circle" style="font-size: 1.8rem"></i> Watch Travel Reel
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive Showcase Search Bar -->
+      <div class="showcase-search" id="searchContainer">
+        <div class="filters">
+          <!-- Filter 1: Location -->
+          <div class="filter" id="filterLocation">
+            <div class="search-icon">
+              <img src="/Imgs/icons/location.png" alt="Location Icon" />
+            </div>
+            <div class="search-text">
+              <h4>Location</h4>
+              <input
+                type="text"
+                id="locationInput"
+                placeholder="Where to next? (e.g. Italy, Bali)"
+                autocomplete="off"
+              />
+            </div>
+            <div class="filter-dropdown" id="locationDropdown">
+              <div class="dropdown-item" data-val="Amalfi Coast, Italy">
+                <span>Amalfi Coast, Italy</span>
+                <span class="dest-price">Hot</span>
+              </div>
+              <div class="dropdown-item" data-val="Big Sur, California">
+                <span>Big Sur, USA</span>
+                <span class="dest-price">Coastal</span>
+              </div>
+              <div class="dropdown-item" data-val="Lake Como, Italy">
+                <span>Lake Como, Italy</span>
+                <span class="dest-price">Lakeside</span>
+              </div>
+              <div class="dropdown-item" data-val="Senja Island, Norway">
+                <span>Senja Island, Norway</span>
+                <span class="dest-price">Fjord</span>
+              </div>
+              <div class="dropdown-item" data-val="Kyoto, Japan">
+                <span>Kyoto, Japan</span>
+                <span class="dest-price">Culture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 2: Activity -->
+          <div class="filter" id="filterActivity">
+            <div class="search-icon">
+              <img src="/Imgs/icons/activities.png" alt="Activity Icon" />
+            </div>
+            <div class="search-text">
+              <h4>Activity</h4>
+              <select id="activitySelect" aria-label="Select Activity">
+                <option value="all">All Activities</option>
+                <option value="sailing">Coastal Sailing</option>
+                <option value="hiking">Alpine Hiking</option>
+                <option value="climbing">Mountain Climbing</option>
+                <option value="skiing">Winter Skiing</option>
+                <option value="culinary">Food & Wine Crawl</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Filter 3: When / Date -->
+          <div class="filter" id="filterDate">
+            <div class="search-icon">
+              <img src="/Imgs/icons/calendar.png" alt="Date Icon" />
+            </div>
+            <div class="search-text">
+              <h4>When</h4>
+              <input
+                type="text"
+                id="dateInput"
+                placeholder="Choose dates"
+                readonly
+                value="Flexible Dates"
+              />
+            </div>
+            <div class="filter-dropdown" id="dateDropdown">
+              <div class="dropdown-item" data-date="This Weekend">
+                <span>This Weekend</span>
+                <i class="uil uil-sun"></i>
+              </div>
+              <div class="dropdown-item" data-date="Next Month">
+                <span>Next Month</span>
+                <i class="uil uil-calendar-alt"></i>
+              </div>
+              <div class="dropdown-item" data-date="Autumn 2026">
+                <span>Autumn Escapes</span>
+                <i class="uil uil-leaf"></i>
+              </div>
+              <div class="dropdown-item" data-date="Winter Getaway">
+                <span>Winter Holidays</span>
+                <i class="uil uil-snowflake"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter 4: Guests -->
+          <div class="filter" id="filterGuests">
+            <div class="search-icon">
+              <img src="/Imgs/icons/guest.png" alt="Guests Icon" />
+            </div>
+            <div class="search-text">
+              <h4>Guests</h4>
+              <h2 id="guestDisplay">2 guests, 1 room</h2>
+            </div>
+            <div class="filter-dropdown" id="guestsDropdown">
+              <div class="stepper-row">
+                <div>
+                  <strong>Adults</strong>
+                  <div style="font-size: 1.1rem; color: #64748b">Ages 13+</div>
+                </div>
+                <div class="stepper-controls">
+                  <button type="button" class="stepper-btn" id="adultMinus">-</button>
+                  <span id="adultCount" style="font-weight: 700">2</span>
+                  <button type="button" class="stepper-btn" id="adultPlus">+</button>
+                </div>
+              </div>
+              <div class="stepper-row" style="border-top: 1px solid #f1f5f9; margin-top: 6px; padding-top: 10px;">
+                <div>
+                  <strong>Children</strong>
+                  <div style="font-size: 1.1rem; color: #64748b">Ages 0-12</div>
+                </div>
+                <div class="stepper-controls">
+                  <button type="button" class="stepper-btn" id="childMinus">-</button>
+                  <span id="childCount" style="font-weight: 700">0</span>
+                  <button type="button" class="stepper-btn" id="childPlus">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Action Button -->
+        <button
+          class="search-button-icon"
+          id="searchSubmitBtn"
+          title="Search Curated Places"
+          aria-label="Search"
+        >
+          <img src="/Imgs/icons/search.svg" alt="" />
+        </button>
+      </div>
+
+      <!-- Quick Trending Searches Tags -->
+      <div class="trending-searches" id="trendingSearches">
+        <span class="trending-label"><i class="uil uil-fire" style="color: #fbbf24"></i> Trending Searches:</span>
+        <button type="button" class="trending-tag-btn" data-dest="Amalfi Coast, Italy">Amalfi Coast</button>
+        <button type="button" class="trending-tag-btn" data-dest="Lake Como, Italy">Lake Como</button>
+        <button type="button" class="trending-tag-btn" data-dest="Kyoto, Japan">Kyoto</button>
+        <button type="button" class="trending-tag-btn" data-dest="Senja Island, Norway">Senja Island</button>
+        <button type="button" class="trending-tag-btn" data-dest="Big Sur, California">Big Sur</button>
+      </div>
+
+      <!-- Active Search Filter Results Banner -->
+      <div class="container" style="margin-top: 1.6rem;">
+        <div class="search-active-banner" id="searchBanner">
+          <span id="searchBannerText">Showing 8 handpicked recommendations for your search.</span>
+          <button class="search-clear-btn" id="clearSearchBtn">Reset Filters</button>
+        </div>
+      </div>
+
+      <!-- Hero Credibility & Trust Bar -->
+      <div class="hero-trust-bar">
+        <div class="hero-trust-card">
+          <div class="hero-trust-icon">
+            <i class="uil uil-globe"></i>
+          </div>
+          <div class="hero-trust-info">
+            <strong>140+ Countries</strong>
+            <span>Curated sanctuaries & hidden gems</span>
+          </div>
+        </div>
+
+        <div class="hero-trust-card">
+          <div class="hero-trust-icon">
+            <i class="uil uil-award"></i>
+          </div>
+          <div class="hero-trust-info">
+            <strong>1,200+ Vetted Stays</strong>
+            <span>40-point physical quality audit</span>
+          </div>
+        </div>
+
+        <div class="hero-trust-card">
+          <div class="hero-trust-icon">
+            <i class="uil uil-star"></i>
+          </div>
+          <div class="hero-trust-info">
+            <strong>4.9 / 5.0 Rating</strong>
+            <span>From 48,000+ conscious travelers</span>
+          </div>
+        </div>
+
+        <div class="hero-trust-card">
+          <div class="hero-trust-icon">
+            <i class="uil uil-shield-check"></i>
+          </div>
+          <div class="hero-trust-info">
+            <strong>Flexible Booking</strong>
+            <span>Penalty-free up to 48 hours</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==========================================================================
+         POPULAR DESTINATIONS SLIDER
+         ========================================================================== -->
+    <section class="destinations" id="destinations">
+      <div class="container">
+        <!-- Section Title Bar -->
+        <div class="title-container" style="margin-top: 5rem;">
+          <div class="section-header-left">
+            <h2 class="section-title">Popular Destinations</h2>
+            <p class="section-subtitle">
+              Trending getaways with the highest traveler satisfaction scores
+            </p>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="swiper-controls-wrapper">
+            <div class="swiper-nav-btn" id="swiperPrev" aria-label="Previous Slide">
+              <i class="uil uil-angle-left-b"></i>
+            </div>
+            <div class="swiper-nav-btn" id="swiperNext" aria-label="Next Slide">
+              <i class="uil uil-angle-right-b"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Carousel -->
+        <div class="swiper swiper1">
+          <div class="destinations-cards swiper-wrapper">
+            <!-- Slide 1 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Big Sur"
+              data-loc="California, USA"
+              data-price="$220"
+              data-type="coastal"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1581790061118-2cd9a40164b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Big Sur California"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">
+                  <i class="uil uil-fire" style="color: #f59e0b"></i> Trending
+                </span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Big Sur</h5>
+                  <h6><i class="uil uil-map-pin"></i> California, USA</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">38 Experiences</span>
+                  <span class="dest-price">From $220/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Prescott"
+              data-loc="Arizona, USA"
+              data-price="$175"
+              data-type="mountains"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1527824404775-dce343118ebc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Prescott Arizona"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Scenic</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Prescott</h5>
+                  <h6><i class="uil uil-map-pin"></i> Arizona, USA</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">24 Experiences</span>
+                  <span class="dest-price">From $175/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Fort Myers"
+              data-loc="Florida, USA"
+              data-price="$195"
+              data-type="coastal"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1512936702668-1ab037aced2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Fort Myers Florida"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Beach</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Fort Myers</h5>
+                  <h6><i class="uil uil-map-pin"></i> Florida, USA</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">31 Experiences</span>
+                  <span class="dest-price">From $195/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Tucson"
+              data-loc="Arizona, USA"
+              data-price="$160"
+              data-type="mountains"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Tucson Desert"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Desert</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Tucson</h5>
+                  <h6><i class="uil uil-map-pin"></i> Arizona, USA</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">19 Experiences</span>
+                  <span class="dest-price">From $160/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="St. Joseph"
+              data-loc="Michigan, USA"
+              data-price="$180"
+              data-type="coastal"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1601425262040-ba23fe84f701?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="St Joseph Michigan"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Lakeside</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>St. Joseph</h5>
+                  <h6><i class="uil uil-map-pin"></i> Michigan, USA</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">15 Experiences</span>
+                  <span class="dest-price">From $180/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Madrid"
+              data-loc="Spain"
+              data-price="$210"
+              data-type="historic"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Madrid Spain"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Historic</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Madrid</h5>
+                  <h6><i class="uil uil-map-pin"></i> Spain</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">62 Experiences</span>
+                  <span class="dest-price">From $210/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Senja Island"
+              data-loc="Norway"
+              data-price="$310"
+              data-type="islands"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1542321993-8fc36217e26d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Senja Island Norway"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Fjords</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Senja Island</h5>
+                  <h6><i class="uil uil-map-pin"></i> Norway</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">28 Experiences</span>
+                  <span class="dest-price">From $310/nt</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div
+              class="destination-card swiper-slide"
+              data-title="Eiffel Tower"
+              data-loc="Paris, France"
+              data-price="$290"
+              data-type="historic"
+            >
+              <div class="dest-img-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  alt="Paris France"
+                  loading="lazy"
+                />
+                <span class="badge badge-white dest-badge">Iconic</span>
+                <button class="card-fav-btn" title="Save destination" aria-label="Save">
+                  <i class="uil uil-heart"></i>
+                </button>
+              </div>
+              <div class="dest-card-info">
+                <div>
+                  <h5>Eiffel Tower</h5>
+                  <h6><i class="uil uil-map-pin"></i> Paris, France</h6>
+                </div>
+                <div class="dest-meta">
+                  <span style="color: #64748b">84 Experiences</span>
+                  <span class="dest-price">From $290/nt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         HOTELS AND RESTAURANTS SECTION
+         ========================================================================== -->
+    <section class="hotel-restaurants" id="restaurants">
+      <div class="container">
+        <!-- Header & Category Filter Tabs -->
+        <div class="title-container">
+          <div class="section-header-left">
+            <h2 class="section-title">Hotels and Stays</h2>
+            <p class="section-subtitle">
+              Handpicked properties certified for premium comfort, design, and service
+            </p>
+          </div>
+
+          <div class="filter-tabs" id="hotelCategoryTabs">
+            <button class="filter-tab-btn active" data-filter="all">All Stays</button>
+            <button class="filter-tab-btn" data-filter="hotel">Resorts & Hotels</button>
+            <button class="filter-tab-btn" data-filter="boutique">Boutique Villas</button>
+          </div>
+
+          <div class="section-button hotel-button" id="hotelToggleBtn">
+            <span>View All</span>
+            <img src="/Imgs/icons/bleft.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Hotel Cards Grid -->
+        <div class="hotel-card" id="hotelGrid">
+          <!-- Card 1 -->
+          <div
+            class="hotel-cards"
+            data-category="hotel"
+            data-name="Monastero Santa Rosa Hotel & Spa"
+            data-loc="Salerno, Italy"
+            data-price="$420"
+            data-rating="5.0"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Monastero Santa Rosa Hotel"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Boutique Spa</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Monastero Santa Rosa Hotel &amp; Spa</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Salerno, Italy
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-wifi"></i> Free Wifi</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-flower"></i> Cliffside Spa</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-utensils"></i> Michelin Dining</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$420 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=5.png" alt="5 Stars" />
+                    <span class="rating-score">5.0</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="hotel-cards"
+            data-category="hotel"
+            data-name="Grand Hotel Tremezzo"
+            data-loc="Lake Como, Italy"
+            data-price="$560"
+            data-rating="4.8"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1586974726316-c6302de6a160?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Grand Hotel Tremezzo"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Lakeside Luxury</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Grand Hotel Tremezzo</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Lake Como, Italy
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-water"></i> Lake View</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-glass-martini-alt"></i> Rooftop Bar</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-ship"></i> Private Ferry</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$560 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=4.png" alt="4 Stars" />
+                    <span class="rating-score">4.8</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="hotel-cards"
+            data-category="hotel"
+            data-name="The Oberoi Udaivilas"
+            data-loc="Udaipur, India"
+            data-price="$380"
+            data-rating="4.9"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="The Oberoi Udaivilas"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Palatial Estate</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>The Oberoi Udaivilas</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Udaipur, India
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-swimmer"></i> Private Pool</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-utensils"></i> Butler Service</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-trees"></i> Royal Gardens</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$380 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=5.png" alt="5 Stars" />
+                    <span class="rating-score">4.9</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="hotel-cards"
+            data-category="boutique"
+            data-name="AKA Beverly Hills"
+            data-loc="Los Angeles, United States"
+            data-price="$350"
+            data-rating="4.7"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1498503182468-3b51cbb6cb24?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="AKA Beverly Hills"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Modern Luxury</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>AKA Beverly Hills</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Los Angeles, United States
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-car"></i> Valet Parking</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-dumbbell"></i> Fitness Center</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-wifi"></i> High-Speed Wifi</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$350 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=5.png" alt="5 Stars" />
+                    <span class="rating-score">4.7</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 (Expanded initially hidden) -->
+          <div
+            class="hotel-cards off"
+            data-category="hotel"
+            data-name="Majestic Elegance"
+            data-loc="Punta Cana, Dominican Republic"
+            data-price="$290"
+            data-rating="4.8"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Majestic Elegance"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Caribbean Resort</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Majestic Elegance</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Dominican Republic
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-umbrella"></i> Beachfront</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-utensils"></i> All-Inclusive</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-swimmer"></i> Lagoon Pool</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$290 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=4.png" alt="4 Stars" />
+                    <span class="rating-score">4.8</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 (Expanded initially hidden) -->
+          <div
+            class="hotel-cards off"
+            data-category="boutique"
+            data-name="Dreams Watervilla Resort"
+            data-loc="Meeru Island, Maldives"
+            data-price="$680"
+            data-rating="5.0"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1586495985096-787fb4a54ac0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Dreams Watervilla Maldives"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Overwater Villa</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Dreams Watervilla</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Meeru Island, Maldives
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-anchor"></i> Overwater Deck</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-fish"></i> Coral Reef Access</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-utensils"></i> Floating Breakfast</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$680 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=5.png" alt="5 Stars" />
+                    <span class="rating-score">5.0</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7 (Expanded initially hidden) -->
+          <div
+            class="hotel-cards off"
+            data-category="hotel"
+            data-name="Waldorf Astoria Rome Cavalieri"
+            data-loc="Rome, Italy"
+            data-price="$510"
+            data-rating="4.9"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1594741158704-5a784b8e59fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Waldorf Astoria Rome"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Grand Heritage</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Waldorf Astoria</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Rome, Italy
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-estate"></i> Panoramic Terrace</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-flower"></i> Luxury Spa</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-utensils"></i> 3-Star Michelin</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$510 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=4.png" alt="4 Stars" />
+                    <span class="rating-score">4.9</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8 (Expanded initially hidden) -->
+          <div
+            class="hotel-cards off"
+            data-category="boutique"
+            data-name="Gili Air Sanctuary"
+            data-loc="Lombok, Indonesia"
+            data-price="$240"
+            data-rating="4.7"
+          >
+            <div class="hotel-img-container">
+              <img
+                class="hotel-thumb"
+                src="https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Gili Air Indonesia"
+                loading="lazy"
+              />
+              <span class="badge badge-white hotel-tag-badge">Eco Haven</span>
+              <button class="card-fav-btn" title="Save Hotel" aria-label="Save Hotel">
+                <i class="uil uil-heart"></i>
+              </button>
+            </div>
+            <div class="hotel-content">
+              <h5>Gili Air Sanctuary</h5>
+              <h6>
+                <img src="/Imgs/icons/map-pin-line.png" alt="" /> Indonesia
+              </h6>
+              <div class="hotel-amenities-list">
+                <span class="hotel-amenity-pill"><i class="uil uil-sun"></i> Solar Powered</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-shield-check"></i> Zero Plastic</span>
+                <span class="hotel-amenity-pill"><i class="uil uil-flower"></i> Yoga Shala</span>
+              </div>
+              <div class="hotel-card-bottom">
+                <div class="hotel-price">$240 <span>/ night</span></div>
+                <div class="hotel-card-actions-row">
+                  <div class="ratings">
+                    <img src="/Imgs/icons/rating=4.png" alt="4 Stars" />
+                    <span class="rating-score">4.7</span>
+                  </div>
+                  <button class="hotel-quick-reserve-btn" type="button">
+                    <i class="uil uil-calendar-alt"></i> Reserve
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CURATED TOURS & EXPERIENCES
+         ========================================================================== -->
+    <section id="tours">
+      <div class="container">
+        <div class="title-container">
+          <div class="section-header-left">
+            <h2 class="section-title">Curated Experiences &amp; Advice</h2>
+            <p class="section-subtitle">
+              Authentic local insider tours guided by verified cultural storytellers
+            </p>
+          </div>
+          <div class="section-button" id="tourExploreBtn">
+            <span>Explore All</span>
+            <img src="/Imgs/icons/bleft.png" alt="" />
+          </div>
+        </div>
+
+        <div class="tours-cards">
+          <!-- Tour 1 -->
+          <div
+            class="tours-card"
+            data-title="East Village Ice Cream & Culinary Crawl"
+            data-loc="New York, USA"
+            data-price="$65 / person"
+            data-rating="4.9"
+          >
+            <div class="tour-img">
+              <img
+                src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="East Village Tour"
+                loading="lazy"
+              />
+              <span class="badge badge-white tour-tag">
+                <i class="uil uil-star" style="color: #f59e0b"></i> Bestseller
+              </span>
+            </div>
+            <div class="tours-card-content">
+              <div class="tours-card-contents-text">
+                <h3>East Village Artisan Ice Cream &amp; Dessert Crawl</h3>
+                <p>
+                  Join an insider food historian through 5 world-class boutique sweet
+                  makers in Lower Manhattan. Savor unique matcha infusions, artisanal
+                  gelato, and the rich heritage behind legendary New York purveyors.
+                </p>
+              </div>
+              <div class="tours-card-footer">
+                <div class="tours-card-content-icons">
+                  <h6><img src="/Imgs/icons/calendersml.png" alt="" /> Today &amp; Daily</h6>
+                  <h6><img src="/Imgs/icons/user.png" alt="" /> Chef Maya Lin</h6>
+                  <h6><img src="/Imgs/icons/message.png" alt="" /> 48 Reviews</h6>
+                </div>
+                <span class="tour-book-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour 2 -->
+          <div
+            class="tours-card"
+            data-title="Brooklyn Bridge Golden Hour Cinematic Photo Walk"
+            data-loc="New York, USA"
+            data-price="$85 / person"
+            data-rating="5.0"
+          >
+            <div class="tour-img">
+              <img
+                src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Brooklyn Bridge Photo Walk"
+                loading="lazy"
+              />
+              <span class="badge badge-white tour-tag">Photo Masterclass</span>
+            </div>
+            <div class="tours-card-content">
+              <div class="tours-card-contents-text">
+                <h3>Brooklyn Bridge Cinematic Golden Hour Walk</h3>
+                <p>
+                  Capture postcard-perfect memories along DUMBO, Pebble Beach, and
+                  the suspension bridge promenade with high-end portrait coaching,
+                  scenic lighting tips, and 15 edited digital portraits included.
+                </p>
+              </div>
+              <div class="tours-card-footer">
+                <div class="tours-card-content-icons">
+                  <h6><img src="/Imgs/icons/calendersml.png" alt="" /> Sunset Slots</h6>
+                  <h6><img src="/Imgs/icons/user.png" alt="" /> Julian Morales</h6>
+                  <h6><img src="/Imgs/icons/message.png" alt="" /> 94 Reviews</h6>
+                </div>
+                <span class="tour-book-link">Details &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACTIVITIES BENTO GRID
+         ========================================================================== -->
+    <section id="activities">
+      <div class="container">
+        <div class="title-container">
+          <div class="section-header-left">
+            <h2 class="section-title">Adventure &amp; Activities</h2>
+            <p class="section-subtitle">
+              Adrenaline-pumping expeditions and peaceful nature escapes
+            </p>
+          </div>
+          <div class="section-button" id="activityViewBtn">
+            <span>View All</span>
+            <img src="/Imgs/icons/bleft.png" alt="" />
+          </div>
+        </div>
+
+        <div class="activities-cards">
+          <!-- Card 1 -->
+          <div class="activities-card" data-act="Sailing">
+            <img
+              src="https://images.unsplash.com/photo-1513432800008-a900568fccfe?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Sailing"
+              loading="lazy"
+            />
+            <div class="activity-overlay">
+              <h4>Sailing</h4>
+              <span class="activity-count">42 Experiences</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="activities-card" data-act="Climbing">
+            <img
+              src="https://images.unsplash.com/photo-1489805549589-3c5ae55fe740?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Rock Climbing"
+              loading="lazy"
+            />
+            <div class="activity-overlay">
+              <h4>Climbing</h4>
+              <span class="activity-count">28 Routes</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="activities-card" data-act="Skiing">
+            <img
+              src="https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Alpine Skiing"
+              loading="lazy"
+            />
+            <div class="activity-overlay">
+              <h4>Skiing</h4>
+              <span class="activity-count">35 Slopes</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="activities-card" data-act="Hiking">
+            <img
+              src="https://images.unsplash.com/19/nomad.JPG?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Scenic Hiking"
+              loading="lazy"
+            />
+            <div class="activity-overlay">
+              <h4>Hiking</h4>
+              <span class="activity-count">64 Trails</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHY CHOOSE 2RISM / TRUST & LIVE METRICS
+         ========================================================================== -->
+    <section class="container">
+      <div class="trust-section">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="uil uil-award"></i>
+            </div>
+            <h3>Handpicked Luxury</h3>
+            <p>
+              Every resort and villa passes a 40-point inspection covering
+              design, amenities, hygiene, and hospitality excellence.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="uil uil-user-check"></i>
+            </div>
+            <h3>Verified Local Guides</h3>
+            <p>
+              Explore with licensed historians, native storytellers, and chefs
+              with deep community ties.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <i class="uil uil-shield-check"></i>
+            </div>
+            <h3>Flexible Cancellation</h3>
+            <p>
+              Life happens. Enjoy penalty-free cancellation on over 85% of bookings
+              up to 48 hours before check-in.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box trust-image-box" id="conciergeIconBox" title="24/7 Global Concierge Specialist">
+              <img
+                src="/Imgs/concierge.jpg"
+                alt="24/7 Global Concierge Specialist"
+                referrerpolicy="no-referrer"
+              />
+              <span class="concierge-online-dot" title="Specialists online now"></span>
+            </div>
+            <h3>24/7 Global Concierge</h3>
+            <p>
+              Direct access to our dedicated trip response specialists anytime
+              before, during, and after your journeys.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT US SECTION
+         ========================================================================== -->
+    <section id="About" class="container">
+      <div class="about-content">
+        <span class="badge badge-purple" style="margin-bottom: 1.2rem;">Our Story</span>
+        <h2>Redefining Travel Discovery for the Conscious Explorer</h2>
+        <div class="about-lead">
+          Crafting thoughtful journeys where luxury meets sustainable culture.
+        </div>
+        <p>
+          Founded by a fellowship of international wanderers and conservationists,
+          2rism connects curious travelers with authentic sanctuaries, boutique
+          villas, and low-impact expeditions. We believe in slow travel that honors
+          local traditions while preserving natural ecosystems for generations ahead.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <i class="uil uil-check-circle"></i> 100% Carbon-Offset Bookings
+          </div>
+          <div class="about-feature">
+            <i class="uil uil-check-circle"></i> Direct Support to Local Hosts
+          </div>
+          <div class="about-feature">
+            <i class="uil uil-check-circle"></i> No Hidden Booking Surcharges
+          </div>
+          <div class="about-feature">
+            <i class="uil uil-check-circle"></i> Curated VIP Guest Perks
+          </div>
+        </div>
+
+        <div class="section-button" id="readMoreAboutBtn" style="width: 150px;">
+          <span>Our Manifesto</span>
+          <img src="/Imgs/icons/bleft.png" alt="" />
+        </div>
+      </div>
+
+      <div class="about-img">
+        <img src="/Imgs/about img.png" alt="About 2rism Travel" />
+        <div class="about-stat-badge">
+          <div class="about-stat-num">12+</div>
+          <div class="about-stat-label">
+            Years Inspiring<br />Global Wanderers
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDITORIAL & PRESS RECOGNITION
+         ========================================================================== -->
+    <section class="press-quotes-section">
+      <div class="container">
+        <div class="press-quotes-header">
+          <div class="badge badge-purple" style="margin-bottom: 1rem;">
+            <i class="uil uil-award"></i> Press Recognition
+          </div>
+          <h2 class="section-title">Acclaimed by the World's Leading Travel Editors</h2>
+          <p class="section-subtitle">
+            Celebrating our dedication to authentic craftsmanship, regenerative stays, and zero booking friction.
+          </p>
+        </div>
+
+        <div class="press-quotes-grid">
+          <!-- Quote 1 -->
+          <div class="press-quote-card">
+            <div>
+              <div class="press-quote-stars">
+                <i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i>
+              </div>
+              <p class="press-quote-text">
+                "2rism is redefining digital travel discovery. Their vetting standard for boutique villas and coastal sanctuaries sets a benchmark that few legacy agencies can match."
+              </p>
+            </div>
+            <div class="press-quote-author">
+              <div class="press-quote-outlet">Condé Nast Traveler</div>
+              <span class="press-verified-badge"><i class="uil uil-check-circle"></i> Editor's Choice 2026</span>
+            </div>
+          </div>
+
+          <!-- Quote 2 -->
+          <div class="press-quote-card">
+            <div>
+              <div class="press-quote-stars">
+                <i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i>
+              </div>
+              <p class="press-quote-text">
+                "From cliffside Amalfi monasteries to Nordic fjords, 2rism connects conscious wanderers with authentic hosts while completely removing hidden booking surcharges."
+              </p>
+            </div>
+            <div class="press-quote-author">
+              <div class="press-quote-outlet">Travel + Leisure</div>
+              <span class="press-verified-badge"><i class="uil uil-check-circle"></i> Global Innovation Award</span>
+            </div>
+          </div>
+
+          <!-- Quote 3 -->
+          <div class="press-quote-card">
+            <div>
+              <div class="press-quote-stars">
+                <i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i><i class="uil uil-star"></i>
+              </div>
+              <p class="press-quote-text">
+                "An impeccable celebration of spatial architecture and local culture. The seamless booking experience feels like having a private concierge in your pocket."
+              </p>
+            </div>
+            <div class="press-quote-author">
+              <div class="press-quote-outlet">Architectural Digest</div>
+              <span class="press-verified-badge"><i class="uil uil-check-circle"></i> Design Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER & NEWSLETTER
+         ========================================================================== -->
+    <footer id="footerContact">
+      <div class="container">
+        <div class="footer-sections">
+          <!-- Brand Bio Column -->
+          <div class="footer-section">
+            <img
+              class="footer-brand"
+              src="/Imgs/Logo/logoblack.svg"
+              alt="2rism Logo"
+            />
+            <p>
+              We always make our customers happy by providing handpicked luxury,
+              authentic community tours, and transparent booking services.
+            </p>
+            <div class="footer-social-icons">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img src="/Imgs/icons/facebook.png" alt="Facebook" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <img src="/Imgs/icons/twitter.png" alt="Twitter" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img src="/Imgs/icons/instagram.png" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Links: About -->
+          <div class="footer-section">
+            <h3>About</h3>
+            <ul>
+              <li><a href="#About">About Us</a></li>
+              <li><a href="#destinations">Curated Stays</a></li>
+              <li><a href="#tours">Editorial &amp; News</a></li>
+              <li><a href="#activities">Experiences</a></li>
+            </ul>
+          </div>
+
+          <!-- Links: Company -->
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#About">Why 2rism</a></li>
+              <li><a href="#About">Partner With Us</a></li>
+              <li><a href="#home">Careers</a></li>
+              <li><a href="#home">Press Kit</a></li>
+            </ul>
+          </div>
+
+          <!-- Links: Support -->
+          <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#home">Your Account</a></li>
+              <li><a href="#home">Support Center</a></li>
+              <li><a href="#home">Guest Reviews</a></li>
+              <li><a href="#home">Safety Guidelines</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Column -->
+          <div class="footer-section">
+            <h3>Subscribe to Our Destination Review Newsletter</h3>
+            <p style="font-size: 1.3rem; margin-top: 6px; margin-bottom: 1.2rem;">
+              Receive secret villa rates, early tour drops, and monthly wanderlust guides.
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <div class="form-section">
+                <img src="/Imgs/icons/messagefooter.png" alt="" />
+                <label for="newsletterEmail">
+                  Your Email
+                  <input
+                    type="email"
+                    id="newsletterEmail"
+                    name="email"
+                    placeholder="e.g. explorer@domain.com"
+                    required
+                  />
+                </label>
+              </div>
+              <button type="submit" aria-label="Submit Newsletter Subscription">
+                <img src="/Imgs/icons/arrowleft.png" alt="" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Legal & Copyright -->
+        <div class="footer-bottom">
+          <div>&copy; 2026 2rism Technologies Inc. All rights reserved.</div>
+          <div class="footer-bottom-links">
+            <a href="#home">Privacy Policy</a>
+            <a href="#home">Terms of Service</a>
+            <a href="#home">Cookie Preferences</a>
+            <a href="#home">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================================================
+         INTERACTIVE QUICK VIEW / BOOKING MODAL
+         ========================================================================== -->
+    <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">
+          <i class="uil uil-multiply"></i>
+        </button>
+        <div class="modal-body">
+          <div class="modal-img-wrap">
+            <img id="modalImg" src="" alt="Place Preview" />
+          </div>
+          <div class="modal-content-area">
+            <div id="modalCategoryBadge" class="badge badge-purple" style="margin-bottom: 8px;">
+              Featured Stay
+            </div>
+            <h2 id="modalTitle">Monastero Santa Rosa Hotel &amp; Spa</h2>
+            <div class="modal-location" id="modalLocation">
+              <i class="uil uil-map-pin" style="color: #7b61ff"></i>
+              <span>Salerno, Italy</span>
+            </div>
+            <p class="modal-description" id="modalDescription">
+              Perched dramatically atop a cliff overlooking the azure Gulf of Salerno,
+              this 17th-century monastery blends timeless Mediterranean architecture
+              with an infinity cliffside pool, Michelin dining, and aromatic herb gardens.
+            </p>
+
+            <div class="modal-amenities">
+              <span class="modal-amenity-chip"><i class="uil uil-wifi"></i> Ultra-fast Wifi</span>
+              <span class="modal-amenity-chip"><i class="uil uil-utensils"></i> Breakfast Included</span>
+              <span class="modal-amenity-chip"><i class="uil uil-water"></i> Infinity Ocean Pool</span>
+              <span class="modal-amenity-chip"><i class="uil uil-check-shield"></i> Free Cancellation</span>
+            </div>
+
+            <div class="modal-footer">
+              <div class="modal-price-big" id="modalPrice">
+                $420 <span>/ night</span>
+              </div>
+              <button class="modal-confirm-btn" id="modalReserveBtn">
+                Confirm Booking
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel Reel Video Modal -->
+    <div class="modal-overlay" id="videoModal" role="dialog" aria-modal="true">
+      <div class="modal-card" style="max-width: 800px; background: #000;">
+        <button class="modal-close-btn" id="videoModalCloseBtn" aria-label="Close video">
+          <i class="uil uil-multiply"></i>
+        </button>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+          <iframe
+            id="videoIframe"
+            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0"
+            title="Travel Reel Experience"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0;"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Off-Canvas Wishlist Drawer -->
+    <div class="wishlist-drawer" id="wishlistDrawer" role="dialog" aria-modal="true" aria-label="Saved Wishlist">
+      <div class="wishlist-header">
+        <h3><i class="uil uil-heart"></i> Saved Wishlist (<span id="drawerCount">0</span>)</h3>
+        <button class="wishlist-close-btn" id="wishlistCloseBtn" aria-label="Close wishlist">
+          <i class="uil uil-multiply"></i>
+        </button>
+      </div>
+      <div class="wishlist-body" id="wishlistBody">
+        <div class="wishlist-empty-state" id="wishlistEmptyState">
+          <i class="uil uil-heart-alt"></i>
+          <h4>Your Wishlist is Empty</h4>
+          <p>Tap the heart icon on any destination or boutique hotel to save it to your trip planner.</p>
+          <button class="wishlist-empty-btn" id="wishlistExploreBtn">
+            <i class="uil uil-compass"></i> Explore Curated Stays
+          </button>
+        </div>
+        <div id="wishlistItemsList" style="display: flex; flex-direction: column; gap: 1.2rem;"></div>
+      </div>
+      <div class="wishlist-footer" id="wishlistFooter" style="display: none;">
+        <div class="wishlist-subtotal-row">
+          <span>Estimated Total</span>
+          <strong id="wishlistSubtotal">$0</strong>
+        </div>
+        <button class="wishlist-checkout-btn" id="wishlistCheckoutBtn">
+          Request Reservation Info
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top" title="Back to top">
+      <i class="uil uil-arrow-up"></i>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+  </body>
+</html>

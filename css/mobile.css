@@ -1,0 +1,368 @@
+/* ==========================================================================
+   2RISM MODERN TRAVEL PLATFORM - MOBILE & RESPONSIVE STYLESHEET
+   Optimized for tablets and smartphones (max-width: 992px & 768px)
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --conatiner--size: 92%;
+    --title-font-size: 2.8rem;
+  }
+
+  .hotel-card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem;
+  }
+
+  .activities-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+
+  .footer-sections {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-section:last-child {
+    grid-column: span 3;
+    max-width: 480px;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --conatiner--size: 92%;
+    --title-font-size: 2.4rem;
+  }
+
+  .main {
+    min-height: auto;
+    border-radius: 0 0 32px 32px;
+    padding-bottom: 5rem;
+  }
+
+  /* Mobile Header */
+  .header {
+    padding-top: 2rem;
+    position: relative;
+    z-index: 100;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  /* Slide-in Mobile Drawer Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #0f172a;
+    border-radius: 0;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    padding: 8rem 2.4rem 3rem 2.4rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1500;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .navbar.navlistOn {
+    transform: translateX(0);
+  }
+
+  .navlists {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+
+  .navlists a {
+    color: rgba(255, 255, 255, 0.85);
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .navlists a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+  }
+
+  /* Hamburger & Close Toggles */
+  .toggleOn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .toggleClose {
+    display: none;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 1600;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toggleClose.toggleCloseOn {
+    display: flex;
+  }
+
+  .user-profile .profile-name {
+    display: none;
+  }
+
+  .saved-trips-btn span:not(.saved-counter) {
+    display: none;
+  }
+
+  .saved-trips-btn {
+    padding: 8px 10px;
+  }
+
+  /* Mobile Drawer Overlay Backdrop */
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1400;
+    display: none;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  /* Showcase Content */
+  .showcase-content {
+    margin: 4.5rem auto 3rem;
+    padding: 0 1rem;
+  }
+
+  .hero-tag {
+    font-size: 1.1rem;
+    padding: 5px 14px;
+  }
+
+  .showcase-content h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+  }
+
+  .showcase-lead {
+    font-size: 1.5rem;
+    margin-bottom: 2.4rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  .showcase-button, .hero-secondary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Mobile Search Bar */
+  .showcase-search {
+    flex-direction: column;
+    padding: 1.6rem;
+    border-radius: 18px;
+    gap: 1.4rem;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .filter {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0.6rem;
+  }
+
+  .filter:last-child {
+    border-bottom: none;
+  }
+
+  .search-button-icon {
+    width: 100%;
+    height: 50px;
+    border-radius: 14px;
+    gap: 8px;
+  }
+
+  .search-button-icon::after {
+    content: "Search Destinations";
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+
+  /* Section Titles & Layouts */
+  .title-container {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .filter-tabs {
+    width: 100%;
+    overflow-x: auto;
+    padding: 4px;
+  }
+
+  .filter-tab-btn {
+    white-space: nowrap;
+    padding: 6px 14px;
+  }
+
+  /* Cards Mobile */
+  .hotel-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hotel-img-container {
+    height: 200px;
+  }
+
+  .tours-cards {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .tours-card {
+    flex-direction: column;
+  }
+
+  .tour-img {
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .activities-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+
+  .activities-card {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .activities-card h4 {
+    font-size: 1.8rem;
+  }
+
+  .trust-section {
+    padding: 3.2rem 2rem;
+    margin-top: 6rem;
+    border-radius: 20px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 2.4rem;
+  }
+
+  /* About Us Section */
+  #About {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-top: 6rem;
+  }
+
+  .about-img {
+    order: -1;
+  }
+
+  .about-stat-badge {
+    position: static;
+    margin-top: 1.6rem;
+    justify-content: center;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  footer {
+    padding-top: 6rem;
+    margin-top: 7rem;
+  }
+
+  .footer-sections {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .footer-section:last-child {
+    grid-column: span 1;
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+}
